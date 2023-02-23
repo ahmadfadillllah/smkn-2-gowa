@@ -1,0 +1,72 @@
+HTTrack3.49-2+htsswf+htsjava launched on Sat, 14 Jan 2023 15:09:46 at https://jthemes.net/themes/html/genius-course/index-1.html +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://jthemes.net/themes/html/genius-course/index-1.html -O1 "C:\My Web Sites\Genius" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+15:11:41	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/assets/css/owl.video.play.png (from https://jthemes.net/themes/html/genius-course/assets/css/owl.carousel.css)
+15:11:41	Warning: 	File not parsed, looks like binary: https://jthemes.net/themes/html/genius-course/assets/fonts/fa-brands-400.woff2
+15:11:41	Warning: 	File not parsed, looks like binary: https://jthemes.net/themes/html/genius-course/assets/fonts/fa-regular-400.woff2
+15:11:42	Warning: 	File not parsed, looks like binary: https://jthemes.net/themes/html/genius-course/assets/fonts/fa-solid-900.woff2
+15:11:42	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/assets/fonts/Flaticon.eot (from https://jthemes.net/themes/html/genius-course/assets/css/flaticon.css)
+15:11:42	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/assets/fonts/Flaticon.eot? (from https://jthemes.net/themes/html/genius-course/assets/css/flaticon.css)
+15:11:42	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/assets/css/images/ui-icons_444444_256x240.png (from https://jthemes.net/themes/html/genius-course/assets/css/progess.css)
+15:11:42	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/assets/css/images/ui-icons_555555_256x240.png (from https://jthemes.net/themes/html/genius-course/assets/css/progess.css)
+15:11:42	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/assets/css/images/ui-icons_ffffff_256x240.png (from https://jthemes.net/themes/html/genius-course/assets/css/progess.css)
+15:11:42	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/assets/css/images/ui-icons_777620_256x240.png (from https://jthemes.net/themes/html/genius-course/assets/css/progess.css)
+15:11:42	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/assets/css/images/ui-icons_cc0000_256x240.png (from https://jthemes.net/themes/html/genius-course/assets/css/progess.css)
+15:11:42	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/assets/css/images/ui-icons_777777_256x240.png (from https://jthemes.net/themes/html/genius-course/assets/css/progess.css)
+15:11:54	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/rev-slider/css/settings.css (from https://jthemes.net/themes/html/genius-course/RTL_Genius/index.html)
+15:11:54	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/rev-slider/css/layers.css (from https://jthemes.net/themes/html/genius-course/RTL_Genius/index.html)
+15:11:54	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/rev-slider/css/navigation.css (from https://jthemes.net/themes/html/genius-course/RTL_Genius/index.html)
+15:12:00	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/index-1.html (from https://jthemes.net/themes/html/genius-course/RTL_Genius/index.html)
+15:12:15	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/shop-single.html (from https://jthemes.net/themes/html/genius-course/RTL_Genius/index.html)
+15:12:15	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/rev-slider/js/jquery.themepunch.tools.min.js (from https://jthemes.net/themes/html/genius-course/RTL_Genius/index.html)
+15:12:15	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/rev-slider/js/jquery.themepunch.revolution.min.js (from https://jthemes.net/themes/html/genius-course/RTL_Genius/index.html)
+15:12:15	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/rev-slider/js/revolution.extension.actions.min.js (from https://jthemes.net/themes/html/genius-course/RTL_Genius/index.html)
+15:12:15	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/rev-slider/js/revolution.extension.layeranimation.min.js (from https://jthemes.net/themes/html/genius-course/RTL_Genius/index.html)
+15:12:15	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/rev-slider/js/revolution.extension.navigation.min.js (from https://jthemes.net/themes/html/genius-course/RTL_Genius/index.html)
+15:12:15	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/rev-slider/js/revolution.extension.parallax.min.js (from https://jthemes.net/themes/html/genius-course/RTL_Genius/index.html)
+15:12:15	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/rev-slider/js/revolution.extension.slideanims.min.js (from https://jthemes.net/themes/html/genius-course/RTL_Genius/index.html)
+15:12:15	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/rev-slider/js/revolution.extension.video.min.js (from https://jthemes.net/themes/html/genius-course/RTL_Genius/index.html)
+15:12:15	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/service.html (from https://jthemes.net/themes/html/genius-course/index-4.html)
+15:12:15	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/service-details.html (from https://jthemes.net/themes/html/genius-course/index-4.html)
+15:12:15	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/team.html (from https://jthemes.net/themes/html/genius-course/index-4.html)
+15:12:15	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/team-details.html (from https://jthemes.net/themes/html/genius-course/index-4.html)
+15:12:15	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/checkout.html (from https://jthemes.net/themes/html/genius-course/index-4.html)
+15:12:15	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/product-details.html (from https://jthemes.net/themes/html/genius-course/index-4.html)
+15:12:15	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/blog-details.html (from https://jthemes.net/themes/html/genius-course/index-4.html)
+15:12:15	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/contactv2.html (from https://jthemes.net/themes/html/genius-course/index-4.html)
+15:12:15	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/error.html (from https://jthemes.net/themes/html/genius-course/index-4.html)
+15:12:15	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/errorv2.html (from https://jthemes.net/themes/html/genius-course/index-4.html)
+15:12:15	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/work-process.html (from https://jthemes.net/themes/html/genius-course/index-4.html)
+15:12:15	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/register.html (from https://jthemes.net/themes/html/genius-course/index-4.html)
+15:12:15	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/css/owl.video.play.png (from https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/css/owl.carousel.css)
+15:12:15	Warning: 	File not parsed, looks like binary: https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/fonts/fa-brands-400.woff2
+15:12:15	Warning: 	File not parsed, looks like binary: https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/fonts/fa-regular-400.woff2
+15:12:15	Warning: 	File not parsed, looks like binary: https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/fonts/fa-solid-900.woff2
+15:12:16	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/fonts/Flaticon.eot (from https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/css/flaticon.css)
+15:12:16	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/fonts/Flaticon.eot? (from https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/css/flaticon.css)
+15:12:16	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/css/images/ui-icons_444444_256x240.png (from https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/css/progess.css)
+15:12:16	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/css/images/ui-icons_555555_256x240.png (from https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/css/progess.css)
+15:12:16	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/css/images/ui-icons_ffffff_256x240.png (from https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/css/progess.css)
+15:12:16	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/css/images/ui-icons_777620_256x240.png (from https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/css/progess.css)
+15:12:16	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/css/images/ui-icons_cc0000_256x240.png (from https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/css/progess.css)
+15:12:16	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/css/images/ui-icons_777777_256x240.png (from https://jthemes.net/themes/html/genius-course/RTL_Genius/assets/css/progess.css)
+15:12:16	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/service.html (from https://jthemes.net/themes/html/genius-course/RTL_Genius/index-4.html)
+15:12:16	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/service-details.html (from https://jthemes.net/themes/html/genius-course/RTL_Genius/index-4.html)
+15:12:16	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/team.html (from https://jthemes.net/themes/html/genius-course/RTL_Genius/index-4.html)
+15:12:16	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/team-details.html (from https://jthemes.net/themes/html/genius-course/RTL_Genius/index-4.html)
+15:12:16	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/checkout.html (from https://jthemes.net/themes/html/genius-course/RTL_Genius/index-4.html)
+15:12:16	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/product-details.html (from https://jthemes.net/themes/html/genius-course/RTL_Genius/index-4.html)
+15:12:16	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/blog-details.html (from https://jthemes.net/themes/html/genius-course/RTL_Genius/index-4.html)
+15:12:16	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/contactv2.html (from https://jthemes.net/themes/html/genius-course/RTL_Genius/index-4.html)
+15:12:16	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/error.html (from https://jthemes.net/themes/html/genius-course/RTL_Genius/index-4.html)
+15:12:16	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/errorv2.html (from https://jthemes.net/themes/html/genius-course/RTL_Genius/index-4.html)
+15:12:16	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/work-process.html (from https://jthemes.net/themes/html/genius-course/RTL_Genius/index-4.html)
+15:12:16	Error: 	"Not Found" (404) at link https://jthemes.net/themes/html/genius-course/RTL_Genius/register.html (from https://jthemes.net/themes/html/genius-course/RTL_Genius/index-4.html)
+
+HTTrack Website Copier/3.49-2 mirror complete in 2 minutes 30 seconds : 370 links scanned, 314 files written (14034168 bytes overall) [10854086 bytes received at 72360 bytes/sec], 4079261 bytes transferred using HTTP compression in 84 files, ratio 19%, 18.5 requests per connection
+(55 errors, 6 warnings, 0 messages)
