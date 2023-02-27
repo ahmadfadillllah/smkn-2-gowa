@@ -10,8 +10,10 @@
                     <div class="d-flex align-items-center flex-wrap ">
                         <h3 class="heading">Daftar Guru</h3>
                     </div>
+                    @if (Auth::user()->role == 'admin')
                     <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal"
                     data-bs-target="#insertGuru">Tambah</button>
+                    @endif
                 </div>
             </div>
         </div>
@@ -42,11 +44,13 @@
                             </div>
                         </div>
                     </div>
+                    @if (Auth::user()->role == 'admin')
                     <div class="card-footer mt-0">
                         <a href="" class="btn btn-warning btn-lg btn-block"data-bs-toggle="modal"
                         data-bs-target="#editGuru{{ $g->id }}" >Edit Data</a>
                         @include('guru.modal.edit')
                     </div>
+                    @endif
                 </div>
             </div>
             @endforeach

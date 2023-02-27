@@ -22,7 +22,9 @@
                                         <th>No. HP</th>
                                         <th>Subject</th>
                                         <th>Pesan</th>
+                                        @if (Auth::user()->role == 'admin')
                                         <th>Aksi</th>
+                                        @endif
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -34,6 +36,7 @@
                                         <td>{{ $s->no_hp }}</td>
                                         <td>{{ $s->subject }}</td>
                                         <td>{{ $s->pesan }}</td>
+                                        @if (Auth::user()->role == 'admin')
                                         <td>
                                             <div class="d-flex">
                                                 <a href="#" class="btn btn-danger shadow btn-xs sharp" data-bs-toggle="modal"
@@ -41,6 +44,7 @@
                                                 @include('saran.destroy')
                                             </div>
                                         </td>
+                                        @endif
                                     </tr>
                                     @endforeach
                                 </tbody>

@@ -89,3 +89,81 @@
     <strong>Info!</strong> {{ $message }}.
 </div>
 @enderror
+
+@error('nama_siswa')
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Info!</strong> {{ $message }}.
+</div>
+@enderror
+
+@error('kelas_id')
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Info!</strong> {{ $message }}.
+</div>
+@enderror
+
+@error('nis')
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Info!</strong> {{ $message }}.
+</div>
+@enderror
+
+@error('nisn')
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Info!</strong> {{ $message }}.
+</div>
+@enderror
+
+@error('nama_panggilan')
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Info!</strong> {{ $message }}.
+</div>
+@enderror
+
+@error('tempat_lahir')
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Info!</strong> {{ $message }}.
+</div>
+@enderror
+
+@error('tangal_lahir')
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Info!</strong> {{ $message }}.
+</div>
+@enderror
+
+@error('no_hp')
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Info!</strong> {{ $message }}.
+</div>
+@enderror
+
+@error('nama_wali')
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Info!</strong> {{ $message }}.
+</div>
+@enderror
+
+@error('no_hp_wali')
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Info!</strong> {{ $message }}.
+</div>
+@enderror
+
+@error('id_surat')
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Info!</strong> {{ $message }}.
+</div>
+@enderror
+
+@error('nomor_surat')
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Info!</strong> {{ $message }}.
+</div>
+@enderror
+
+@error('perihal')
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Info!</strong> {{ $message }}.
+</div>
+@enderror

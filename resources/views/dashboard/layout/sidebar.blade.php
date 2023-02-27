@@ -7,6 +7,7 @@
                     <span class="nav-text">Dashboard</span>
                 </a>
             </li>
+            @if (Auth::user()->role == 'admin')
             <li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
                 <i class="material-icons"> app_registration </i>
                 <span class="nav-text">Profil Sekolah</span>
@@ -30,6 +31,7 @@
                     <span class="nav-text">Kategori Berita</span>
                 </a>
             </li>
+            @endif
             <li>
                 <a href="{{ route('berita.index') }}" aria-expanded="false">
                     <i class="material-icons">article</i>
@@ -43,7 +45,7 @@
             <ul aria-expanded="false">
                 <li><a href="{{ route('guru.index') }}">Guru</a></li>
                 <li><a href="{{ route('kelas.index') }}">Kelas</a></li>
-                <li><a href="table-bootstrap-basic.html">Siswa</a></li>
+                <li><a href="{{ route('siswa.index') }}">Siswa</a></li>
             </ul>
              </li>
              <li>
@@ -63,8 +65,17 @@
                     <span class="nav-text">Data Surat</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="javascript:void(0);">Layanan Surat</a></li>
-                    <li><a href="javascript:void(0);">Cetak Surat</a></li>
+                    <li><a href="{{ route('nomorsurat.index') }}">Nomor Surat</a></li>
+                    <li><a href="{{ route('suratmasuk.index') }}">Surat Masuk</a></li>
+                    <li><a class="has-arrow" href="javascript:void(0);" aria-expanded="false">Surat Keluar</a>
+                        <ul aria-expanded="false">
+                            <li><a href="javascript:void(0);">Surat Keterangan Siswa Aktif</a></li>
+                            <li><a href="javascript:void(0);">Surat Izin Kunjungan Siswa</a></li>
+                            <li><a href="javascript:void(0);">Surat Izin Orang Tua Siswa</a></li>
+                            <li><a href="javascript:void(0);">Surat Keterangan Berkelakuan Baik Siswa</a></li>
+                            <li><a href="javascript:void(0);">Surat Keterangan Lulus</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </li>
         </ul>

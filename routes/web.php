@@ -8,10 +8,13 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KategoriBeritaController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\KelolaUserController;
+use App\Http\Controllers\NomorSuratController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProfilSekolahController;
 use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\SaranController;
+use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\SuratMasukController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,8 +40,10 @@ Route::get('/login',[AuthController::class, 'login'])->name('login');
 Route::get('/logout',[AuthController::class, 'logout'])->name('logout');
 
 
-Route::group(['middleware' => ['auth', 'checkRole:admin']], function(){
+Route::group(['middleware' => ['auth', 'checkRole:admin,guru']], function(){
     Route::get('/dashboard/index',[DashboardController::class, 'index'])->name('dashboard.index');
+
+    Route::get('/search',[DashboardController::class, 'search'])->name('dashboard.search');
 
     Route::get('/profil_sekolah/visi',[ProfilSekolahController::class, 'visi'])->name('profilsekolah.visi');
     Route::post('/profil_sekolah/visi/update',[ProfilSekolahController::class, 'visi_update'])->name('profilsekolah.visi_update');
@@ -79,6 +84,21 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function(){
     Route::post('/kelas/insert',[KelasController::class, 'insert'])->name('kelas.insert');
     Route::post('/kelas/update/{id}',[KelasController::class, 'update'])->name('kelas.update');
     Route::get('/kelas/destroy/{id}',[KelasController::class, 'destroy'])->name('kelas.destroy');
+
+    Route::get('/siswa',[SiswaController::class, 'index'])->name('siswa.index');
+    Route::post('/siswa/insert',[SiswaController::class, 'insert'])->name('siswa.insert');
+    Route::post('/siswa/update/{id}',[SiswaController::class, 'update'])->name('siswa.update');
+    Route::get('/siswa/destroy/{id}',[SiswaController::class, 'destroy'])->name('siswa.destroy');
+
+    Route::get('/nomor_surat',[NomorSuratController::class, 'index'])->name('nomorsurat.index');
+    Route::post('/nomorsurat/insert',[NomorSuratController::class, 'insert'])->name('nomorsurat.insert');
+    Route::post('/nomorsurat/update/{id}',[NomorSuratController::class, 'update'])->name('nomorsurat.update');
+    Route::get('/nomorsurat/destroy/{id}',[NomorSuratController::class, 'destroy'])->name('nomorsurat.destroy');
+
+    Route::get('/surat_masuk',[SuratMasukController::class, 'index'])->name('suratmasuk.index');
+    Route::post('/surat_masuk/insert',[SuratMasukController::class, 'insert'])->name('suratmasuk.insert');
+    Route::post('/surat_masuk/update/{id}',[SuratMasukController::class, 'update'])->name('suratmasuk.update');
+    Route::get('/surat_masuk/destroy/{id}',[SuratMasukController::class, 'destroy'])->name('suratmasuk.destroy');
 
     Route::get('/profile',[ProfileController::class, 'index'])->name('profile.index');
     Route::post('/profile/change_avatar',[ProfileController::class, 'change_avatar'])->name('profile.change_avatar');

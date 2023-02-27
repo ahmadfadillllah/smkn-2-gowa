@@ -9,45 +9,43 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Daftar Kelas</h4>
-                        @if (Auth::user()->role == 'admin')
+                        <h4 class="card-title">Daftar Siswa</h4>
                         <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal"
-                        data-bs-target="#insertKelas">Tambah</button>
-                        @endif
+                        data-bs-target="#insertSiswa">Tambah</button>
                     </div>
                     <!-- Modal Harus Disini -->
-                    @include('kelas.modal.insert')
+                    @include('siswa.modal.insert')
                     <div class="card-body">
                         <div class="table-responsive">
                             <table id="example3" class="display" style="min-width: 845px">
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Tingkat</th>
-                                        <th>Nama Kelas</th>
-                                        @if (Auth::user()->role == 'admin')
+                                        <th>Kelas</th>
+                                        <th>NIS</th>
+                                        <th>NISN</th>
+                                        <th>Nama Lengkap</th>
                                         <th>Aksi</th>
-                                        @endif
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($kelas as $k)
+                                    @foreach ($search as $s)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $k->tingkat }}</td>
-                                        <td>{{ $k->nama }}</td>
-                                        @if (Auth::user()->role == 'admin')
+                                        <td>{{ $s->kelas->tingkat }} {{ $s->kelas->nama }}</td>
+                                        <td>{{ $s->nis }}</td>
+                                        <td>{{ $s->nisn }}</td>
+                                        <td>{{ $s->nama_siswa }}</td>
                                         <td>
                                             <div class="d-flex">
                                                 <a href="#" class="btn btn-primary shadow btn-xs sharp me-1" data-bs-toggle="modal"
-                                                data-bs-target="#editKelas{{ $k->id }}"><i class="fas fa-pencil-alt"></i></a>
-                                                @include('kelas.modal.edit')
+                                                data-bs-target="#editSiswa{{ $s->id }}"><i class="fas fa-pencil-alt"></i></a>
+                                                @include('siswa.modal.edit')
                                                 <a href="#" class="btn btn-danger shadow btn-xs sharp" data-bs-toggle="modal"
-                                                data-bs-target="#destroyKelas{{ $k->id }}"><i class="fa fa-trash"></i></a>
-                                                @include('kelas.modal.destroy')
+                                                data-bs-target="#destroySiswa{{ $s->id }}"><i class="fa fa-trash"></i></a>
+                                                @include('siswa.modal.destroy')
                                             </div>
                                         </td>
-                                        @endif
                                     </tr>
                                     @endforeach
                                 </tbody>
