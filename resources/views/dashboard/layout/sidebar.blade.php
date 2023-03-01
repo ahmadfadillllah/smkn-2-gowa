@@ -69,7 +69,7 @@
                     <li><a href="{{ route('suratmasuk.index') }}">Surat Masuk</a></li>
                     <li><a class="has-arrow" href="javascript:void(0);" aria-expanded="false">Surat Keluar</a>
                         <ul aria-expanded="false">
-                            <li><a href="javascript:void(0);">Surat Keterangan Siswa Aktif</a></li>
+                            <li><a href="{{ route('suket_siswa_aktif.index') }}">Surat Keterangan Siswa Aktif</a></li>
                             <li><a href="javascript:void(0);">Surat Izin Kunjungan Siswa</a></li>
                             <li><a href="javascript:void(0);">Surat Izin Orang Tua Siswa</a></li>
                             <li><a href="javascript:void(0);">Surat Keterangan Berkelakuan Baik Siswa</a></li>

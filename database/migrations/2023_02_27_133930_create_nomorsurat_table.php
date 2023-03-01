@@ -19,6 +19,7 @@ class CreateNomorsuratTable extends Migration
             $table->string('id_surat');
             $table->string('nomor_surat');
             $table->string('perihal');
+            $table->integer('jumlah');
             $table->timestamps();
         });
     }

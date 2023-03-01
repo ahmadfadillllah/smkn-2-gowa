@@ -8,57 +8,58 @@
             <div class="slider-text">
                 <div class="section-title mb20 headline text-center ">
                     <div class="layer-1-1">
-                        <span class="subtitle text-uppercase">{{ config('app.name') }}</span>
+                        <span class="subtitle text-uppercase">Slide 1</span>
                     </div>
                     <div class="layer-1-3">
-                        <h2><span>Layanan</span> Surat</h2>
+                        <h2><span>{{ config('app.name') }}</span></h2>
                     </div>
                 </div>
                 <div class="layer-1-4">
                     <div id="course-btn">
                         <div class="genius-btn  text-center text-uppercase ul-li-block bold-font">
-                            <a href="#">Our Courses <i class="fas fa-caret-right"></i></a>
+                            <a href="#">Layanan Surat</a>
                         </div>
                     </div>
                 </div>
             </div>
 
         </div>
-        {{-- <div class="slider-area slider-bg-2 relative-position">
+        <div class="slider-area slider-bg-2 relative-position">
             <div class="slider-text">
                 <div class="section-title mb20 headline text-center ">
                     <div class="layer-1-1">
-                        <span class="subtitle text-uppercase">EDUCATION & TRAINING ORGANIZATION</span>
-                    </div>
-                    <div class="layer-1-2">
-                        <h2 class="secoud-title"> Browse The <span>Best Courses.</span></h2>
-                    </div>
-                </div>
-                <div class="layer-1-3">
-                    <div class="search-course mb30 relative-position">
-                        <form action="#" method="post">
-                            <input class="course" name="course" type="text"
-                                placeholder="Type what do you want to learn today?">
-                            <div class="nws-button text-center  gradient-bg text-capitalize">
-                                <button type="submit" value="Submit">Search Course</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="layer-1-4">
-                        <div class="slider-course-category ul-li text-center">
-                            <span class="float-left">BY CATEGORY:</span>
-                            <ul>
-                                <li>Graphics Design</li>
-                                <li>Web Design</li>
-                                <li>Mobile Application</li>
-                                <li>Enginering</li>
-                                <li>Science</li>
-                            </ul>
-                        </div>
+                        <span class="subtitle text-uppercase">Slide 2</span>
                     </div>
                 </div>
             </div>
-        </div> --}}
+        </div>
+        <div class="slider-area slider-bg-3 relative-position">
+            <div class="slider-text">
+                <div class="section-title mb20 headline text-center ">
+                    <div class="layer-1-1">
+                        <span class="subtitle text-uppercase">Slide 3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-area slider-bg-4 relative-position">
+            <div class="slider-text">
+                <div class="section-title mb20 headline text-center ">
+                    <div class="layer-1-1">
+                        <span class="subtitle text-uppercase">Slide 4</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-area slider-bg-5 relative-position">
+            <div class="slider-text">
+                <div class="section-title mb20 headline text-center ">
+                    <div class="layer-1-1">
+                        <span class="subtitle text-uppercase">Slide 5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 </section>
@@ -219,8 +220,7 @@
                                 </div>
                                 <div class="address-details ul-li-block">
                                     <ul>
-                                        <li><span>Primary: </span>Last Vegas, 120 Graphic Street, US</li>
-                                        <li><span>Second: </span>Califorinia, 88 Design Street, US</li>
+                                        <li>Jl. Mesjid Raya No.46, Sungguminasa, Kec. Somba Opu, Kabupaten Gowa, Sulawesi Selatan 92114</li>
                                     </ul>
                                 </div>
                             </div>
@@ -231,8 +231,8 @@
                                 </div>
                                 <div class="address-details ul-li-block">
                                     <ul>
-                                        <li><span>Primary: </span>(100) 3434 55666</li>
-                                        <li><span>Second: </span>(20) 3434 9999</li>
+                                        <li><span>Primary: </span>(0411) 865170</li>
+                                        <li><span>Second: </span>-</li>
                                     </ul>
                                 </div>
                             </div>
@@ -243,15 +243,14 @@
                                 </div>
                                 <div class="address-details ul-li-block">
                                     <ul>
-                                        <li><span>Primary: </span>info@geniuscourse.com</li>
-                                        <li><span>Second: </span>mail@genius.info</li>
+                                        <li>smknegeri02gowa@gmail.com</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="genius-btn mt60 gradient-bg text-center text-uppercase ul-li-block bold-font ">
-                        <a href="#">Contact Us <i class="fas fa-caret-right"></i></a>
+                        <a href="{{ route('home.contact') }}">Saran / Masukan <i class="fas fa-caret-right"></i></a>
                     </div>
                 </div>
 

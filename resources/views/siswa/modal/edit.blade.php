@@ -43,6 +43,18 @@
                     <input type="date" class="form-control input-rounded" name="tanggal_lahir" value="{{ $s->tanggal_lahir }}" required>
                 </div>
                 <div class="mb-3">
+                    <label for="">Agama</label>
+                    <select class="default-select wide form-control" id="validationCustom05" name="agama" required>
+                        <option data-display="Select" value="{{ $s->agama }}">{{ $s->agama }}</option>
+                        <option  data-display="Select" value="Islam">Islam</option>
+                        <option  data-display="Select" value="Kristen">Kristen</option>
+                        <option  data-display="Select" value="Katolik">Katolik</option>
+                        <option  data-display="Select" value="Hindu">Hindu</option>
+                        <option  data-display="Select" value="Budha">Budha</option>
+                        <option  data-display="Select" value="Konghucu">Konghucu</option>
+                    </select>
+                </div>
+                <div class="mb-3">
                     <label for="">No. Handphone</label>
                     <input type="text" class="form-control input-rounded" name="no_hp" value="{{ $s->no_hp }}" required>
                 </div>

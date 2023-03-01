@@ -23,6 +23,7 @@ class NomorSuratController extends Controller
                 'id_surat' => $request->id_surat,
                 'nomor_surat' => $request->nomor_surat,
                 'perihal' => $request->perihal,
+                'jumlah' => 0,
             ]);
 
             return redirect()->back()->with('success', 'Nomor Surat telah ditambahkan');

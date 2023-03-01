@@ -14,7 +14,11 @@ use App\Http\Controllers\ProfilSekolahController;
 use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\SaranController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\SuketSiswaAktifController;
 use App\Http\Controllers\SuratMasukController;
+use App\Models\NomorSurat;
+use App\Models\Siswa;
+use App\Models\SuketSiswaAktif;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -99,6 +103,34 @@ Route::group(['middleware' => ['auth', 'checkRole:admin,guru']], function(){
     Route::post('/surat_masuk/insert',[SuratMasukController::class, 'insert'])->name('suratmasuk.insert');
     Route::post('/surat_masuk/update/{id}',[SuratMasukController::class, 'update'])->name('suratmasuk.update');
     Route::get('/surat_masuk/destroy/{id}',[SuratMasukController::class, 'destroy'])->name('suratmasuk.destroy');
+
+    Route::get('/suket_siswa_aktif',[SuketSiswaAktifController::class, 'index'])->name('suket_siswa_aktif.index');
+    Route::post('/suket_siswa_aktif/insert',[SuketSiswaAktifController::class, 'insert'])->name('suket_siswa_aktif.insert');
+    Route::get('/suket_siswa_aktif/destroy/{id}',[SuketSiswaAktifController::class, 'destroy'])->name('suket_siswa_aktif.destroy');
+    Route::get('/suket_siswa_aktif/download/{id}', function ($id) {
+        $suket = SuketSiswaAktif::where('id', $id)->first();
+
+		$nomorsurat = NomorSurat::where('id', $suket->nomorsurat_id)->first();
+        $siswa = Siswa::where('id', $suket->siswa_id)->first();
+
+        $file = public_path('suket_siswa_aktif.rtf');
+
+		$array = array(
+            '[NOMOR_SURAT]' => $nomorsurat->id_surat . '/' . $nomorsurat->nomor_surat,
+            '[NAMA_SISWA]' => $siswa->nama_siswa,
+            '[TTL]' => $siswa->tempat_lahir . ', ' . date("d F Y", strtotime($siswa->tanggal_lahir)),
+            '[JURUSAN]' => $siswa->kelas_id,
+            '[NISN]' => $siswa->nisn,
+            '[NAMA_IBU_KANDUNG]' => $siswa->nama_wali,
+            '[AGAMA]' => $siswa->agama,
+            '[TAHUN_LULUS]' => $suket->tahun_lulus,
+            '[TANGGAL]' => date("d F Y", strtotime($suket->tanggal)),
+		);
+
+		$nama_file = 'Surat_Keterangan_Aktif_'.$siswa->nama_lengkap.'.doc';
+
+		return WordTemplate::export($file, $array, $nama_file);
+	})->name('suket_siswa_aktif.download');
 
     Route::get('/profile',[ProfileController::class, 'index'])->name('profile.index');
     Route::post('/profile/change_avatar',[ProfileController::class, 'change_avatar'])->name('profile.change_avatar');

@@ -10,7 +10,7 @@
             @csrf
             <div class="modal-body">
                 <div class="mb-3">
-                    <label for="">Kelas Kelas</label>
+                    <label for="">Kelas</label>
                     <select class="default-select wide form-control" id="validationCustom05" name="kelas_id" required>
                         <option  data-display="Select" value="">Pilih salah satu</option>
                         @foreach ($kelas as $k)
@@ -41,6 +41,18 @@
                 <div class="mb-3">
                     <label for="">Tanggal Lahir</label>
                     <input type="date" class="form-control input-rounded" name="tanggal_lahir" placeholder="Masukkan Tanggal Lahir" required>
+                </div>
+                <div class="mb-3">
+                    <label for="">Agama</label>
+                    <select class="default-select wide form-control" id="validationCustom05" name="agama" required>
+                        <option  data-display="Select" value="">Pilih salah satu</option>
+                        <option  data-display="Select" value="Islam">Islam</option>
+                        <option  data-display="Select" value="Kristen">Kristen</option>
+                        <option  data-display="Select" value="Katolik">Katolik</option>
+                        <option  data-display="Select" value="Hindu">Hindu</option>
+                        <option  data-display="Select" value="Budha">Budha</option>
+                        <option  data-display="Select" value="Konghucu">Konghucu</option>
+                    </select>
                 </div>
                 <div class="mb-3">
                     <label for="">No. Handphone</label>

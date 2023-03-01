@@ -22,6 +22,7 @@ class CreateSiswaTable extends Migration
             $table->string('nama_panggilan');
             $table->string('tempat_lahir');
             $table->date('tanggal_lahir');
+            $table->string('agama');
             $table->string('no_hp');
             $table->string('nama_wali');
             $table->string('no_hp_wali');

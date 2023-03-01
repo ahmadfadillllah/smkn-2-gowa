@@ -43,9 +43,9 @@
 		<script src="{{ asset('home/jthemes.net/themes/html/genius-course') }}/assets/js/jquery.counterup.min.js"></script>
 		<script src="{{ asset('home/jthemes.net/themes/html/genius-course') }}/assets/js/waypoints.min.js"></script>
 		<script src="{{ asset('home/jthemes.net/themes/html/genius-course') }}/assets/js/jquery-ui.js"></script>
+		<script src="http://maps.google.com/maps/api/js?key=AIzaSyC61_QVqt9LAhwFdlQmsNwi5aUJy9B2SyA"></script>
 		<script src="{{ asset('home/jthemes.net/themes/html/genius-course') }}/assets/js/gmap3.min.js"></script>
 		<script src="{{ asset('home/jthemes.net/themes/html/genius-course') }}/assets/js/switch.js"></script>
-		<script src="http://maps.google.com/maps/api/js?key=AIzaSyC61_QVqt9LAhwFdlQmsNwi5aUJy9B2SyA"></script>
 		<script src="{{ asset('home/jthemes.net/themes/html/genius-course') }}/assets/js/script.js"></script>
 
 	</body>
