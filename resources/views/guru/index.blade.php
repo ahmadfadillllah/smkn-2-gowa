@@ -11,13 +11,18 @@
                         <h3 class="heading">Daftar Guru</h3>
                     </div>
                     @if (Auth::user()->role == 'admin')
-                    <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal"
-                    data-bs-target="#insertGuru">Tambah</button>
+                    <div class="mr-0">
+                        <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal"
+                        data-bs-target="#insertGuru">Tambah</button>
+                        <button type="button" class="btn btn-success mb-2" data-bs-toggle="modal"
+                        data-bs-target="#importGuru">Import</button>
+                    </div>
                     @endif
                 </div>
             </div>
         </div>
         @include('guru.modal.insert')
+        @include('guru.modal.import')
         <!-- row -->
         <div class="row">
             @foreach ($guru as $g)

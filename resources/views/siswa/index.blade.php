@@ -11,12 +11,18 @@
                     <div class="card-header">
                         <h4 class="card-title">Daftar Siswa</h4>
                         @if (Auth::user()->role == 'admin')
-                        <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal"
-                        data-bs-target="#insertSiswa">Tambah</button>
+                        <div class="mr-0">
+                            <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal"
+                            data-bs-target="#insertSiswa">Tambah</button>
+                            <button type="button" class="btn btn-success mb-2" data-bs-toggle="modal"
+                            data-bs-target="#importSiswa">Import</button>
+                        </div>
+
                         @endif
                     </div>
                     <!-- Modal Harus Disini -->
                     @include('siswa.modal.insert')
+                    @include('siswa.modal.import')
                     <div class="card-body">
                         <div class="table-responsive">
                             <table id="example3" class="display" style="min-width: 845px">

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\GuruImport;
 use App\Models\Guru;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Maatwebsite\Excel\Facades\Excel;
 
 class GuruController extends Controller
 {
@@ -81,5 +83,16 @@ class GuruController extends Controller
         } catch (\Throwable $th) {
             return redirect()->route('guru.index')->with('info', $th->getMessage());
         }
+    }
+
+    public function importGuru(Request $request)
+    {
+        try {
+            Excel::import(new GuruImport, $request->file);
+            return redirect()->back()->with('success', 'Data berhasil diimport');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('info', $th->getMessage());
+        }
+
     }
 }

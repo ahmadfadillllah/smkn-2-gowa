@@ -83,6 +83,7 @@ Route::group(['middleware' => ['auth', 'checkRole:admin,guru']], function(){
     Route::get('/guru',[GuruController::class, 'index'])->name('guru.index');
     Route::post('/guru/insert',[GuruController::class, 'insert'])->name('guru.insert');
     Route::post('/guru/update/{id}',[GuruController::class, 'update'])->name('guru.update');
+    Route::post('/guru/import',[GuruController::class, 'importGuru'])->name('guru.import');
 
     Route::get('/kelas',[KelasController::class, 'index'])->name('kelas.index');
     Route::post('/kelas/insert',[KelasController::class, 'insert'])->name('kelas.insert');
@@ -93,6 +94,7 @@ Route::group(['middleware' => ['auth', 'checkRole:admin,guru']], function(){
     Route::post('/siswa/insert',[SiswaController::class, 'insert'])->name('siswa.insert');
     Route::post('/siswa/update/{id}',[SiswaController::class, 'update'])->name('siswa.update');
     Route::get('/siswa/destroy/{id}',[SiswaController::class, 'destroy'])->name('siswa.destroy');
+    Route::post('/siswa/import',[SiswaController::class, 'importSiswa'])->name('siswa.import');
 
     Route::get('/nomor_surat',[NomorSuratController::class, 'index'])->name('nomorsurat.index');
     Route::post('/nomorsurat/insert',[NomorSuratController::class, 'insert'])->name('nomorsurat.insert');

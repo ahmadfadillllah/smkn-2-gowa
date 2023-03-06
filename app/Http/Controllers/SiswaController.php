@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\SiswaImport;
 use App\Models\Kelas;
 use App\Models\Siswa;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class SiswaController extends Controller
 {
@@ -66,6 +68,16 @@ class SiswaController extends Controller
         try {
             Siswa::where('id', $id)->delete();
             return redirect()->back()->with('success', 'Siswa telah dihapus');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('info', $th->getMessage());
+        }
+    }
+
+    public function importSiswa(Request $request)
+    {
+        try {
+            Excel::import(new SiswaImport, $request->file);
+            return redirect()->back()->with('success', 'Data berhasil diimport');
         } catch (\Throwable $th) {
             return redirect()->back()->with('info', $th->getMessage());
         }

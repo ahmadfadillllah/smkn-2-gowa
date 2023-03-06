@@ -20,12 +20,12 @@ class CreateSiswaTable extends Migration
             $table->bigInteger('nisn');
             $table->string('nama_siswa');
             $table->string('nama_panggilan');
-            $table->string('tempat_lahir');
-            $table->date('tanggal_lahir');
-            $table->string('agama');
-            $table->string('no_hp');
-            $table->string('nama_wali');
-            $table->string('no_hp_wali');
+            $table->string('tempat_lahir')->nullable();
+            $table->date('tanggal_lahir')->nullable();
+            $table->string('agama')->nullable();
+            $table->string('no_hp')->nullable();
+            $table->string('nama_wali')->nullable();
+            $table->string('no_hp_wali')->nullable();
             $table->timestamps();
         });
     }
