@@ -28,7 +28,7 @@
                     </select>
                 </div>
                 <div class="mb-3">
-                    <label for="">Tempat Lahir</label>
+                    <label for="">Tahun Lulus</label>
                     <input type="number" class="form-control input-rounded" name="tahun_lulus" placeholder="2023" required>
                 </div>
                 <div class="mb-3">
