@@ -37,7 +37,7 @@ Route::get('/about',[HomeController::class, 'about'])->name('home.about');
 Route::get('/contact_us',[HomeController::class, 'contact'])->name('home.contact');
 Route::post('/contact_us/send',[HomeController::class, 'contact_send'])->name('home.contact_send');
 
-Route::get('/berita/{slug}',[HomeController::class, 'berita'])->name('home.berita');
+Route::get('/berita_kegiatan/{slug}',[HomeController::class, 'berita'])->name('home.berita');
 
 Route::post('/login_post',[AuthController::class, 'login_post'])->name('login.post');
 Route::get('/login',[AuthController::class, 'login'])->name('login');
