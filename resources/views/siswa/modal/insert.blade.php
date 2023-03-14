@@ -55,6 +55,18 @@
                     </select>
                 </div>
                 <div class="mb-3">
+                    <label for="">Jenis Kelamin</label>
+                    <select class="default-select wide form-control" id="validationCustom05" name="jenis_kelamin" required>
+                        <option  data-display="Select" value="">Pilih salah satu</option>
+                        <option  data-display="Select" value="Laki-laki">Laki-laki</option>
+                        <option  data-display="Select" value="Perempuan">Perempuan</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="">Alamat</label>
+                    <input type="text" class="form-control input-rounded" name="alamat" placeholder="Masukkan Nama Wali" required>
+                </div>
+                <div class="mb-3">
                     <label for="">No. Handphone</label>
                     <input type="text" class="form-control input-rounded" name="no_hp" placeholder="Masukkan No. Handphone" required>
                 </div>

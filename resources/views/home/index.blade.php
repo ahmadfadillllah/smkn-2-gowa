@@ -82,7 +82,7 @@
                     <img src="{{ asset('admin/finlab.dexignzone.com/xhtml/images/berita') }}/{{ $b->gambar }}"
                         alt="">
                     <div class="course-details-btn">
-                        <a href="{{ route('home.berita', $b->slug) }}">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
+                        <a href="{{ route('home.berita', $b->slug) }}">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="course-item-text">
@@ -100,7 +100,7 @@
                         </div>
                     </div>
                     <div class="course-title mt10 headline pb45 relative-position">
-                        <h3><a href="{{ $b->slug }}">{{ $b->judul }}</a> <span
+                        <h3><a href="{{ route('home.berita', $b->slug) }}">{{ $b->judul }}</a> <span
                                 class="trend-badge text-uppercase bold-font"><i class="fas fa-bolt"></i> TRENDING</span>
                         </h3>
                     </div>

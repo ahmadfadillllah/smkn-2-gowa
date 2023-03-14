@@ -55,6 +55,18 @@
                     </select>
                 </div>
                 <div class="mb-3">
+                    <label for="">Jenis Kelamin</label>
+                    <select class="default-select wide form-control" id="validationCustom05" name="jenis_kelamin" required>
+                        <option data-display="Select" value="{{ $s->jenis_kelamin }}">{{ $s->jenis_kelamin }}</option>
+                        <option  data-display="Select" value="Laki-laki">Laki-laki</option>
+                        <option  data-display="Select" value="Perempuan">Perempuan</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="">Alamat</label>
+                    <input type="text" class="form-control input-rounded" name="alamat" value="{{ $s->alamat }}" required>
+                </div>
+                <div class="mb-3">
                     <label for="">No. Handphone</label>
                     <input type="text" class="form-control input-rounded" name="no_hp" value="{{ $s->no_hp }}" required>
                 </div>

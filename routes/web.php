@@ -16,6 +16,7 @@ use App\Http\Controllers\SaranController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\SuketSiswaAktifController;
 use App\Http\Controllers\SuratMasukController;
+use App\Models\Kelas;
 use App\Models\NomorSurat;
 use App\Models\Siswa;
 use App\Models\SuketSiswaAktif;
@@ -114,18 +115,18 @@ Route::group(['middleware' => ['auth', 'checkRole:admin,guru']], function(){
 
 		$nomorsurat = NomorSurat::where('id', $suket->nomorsurat_id)->first();
         $siswa = Siswa::where('id', $suket->siswa_id)->first();
+        $kelas = Kelas::where('id', $siswa->kelas_id)->first();
 
         $file = public_path('suket_siswa_aktif.rtf');
 
 		$array = array(
             '[NOMOR_SURAT]' => $nomorsurat->id_surat . '/' . $nomorsurat->nomor_surat,
             '[NAMA_SISWA]' => $siswa->nama_siswa,
+            '[JENIS_KELAMIN]' => $siswa->jenis_kelamin,
             '[TTL]' => $siswa->tempat_lahir . ', ' . date("d F Y", strtotime($siswa->tanggal_lahir)),
-            '[JURUSAN]' => $siswa->kelas_id,
             '[NISN]' => $siswa->nisn,
-            '[NAMA_IBU_KANDUNG]' => $siswa->nama_wali,
-            '[AGAMA]' => $siswa->agama,
-            '[TAHUN_LULUS]' => $suket->tahun_lulus,
+            '[KELAS]' => $kelas->tingkat . ' ' . $kelas->nama,
+            '[ALAMAT]' => $siswa->alamat,
             '[TANGGAL]' => date("d F Y", strtotime($suket->tanggal)),
 		);
 

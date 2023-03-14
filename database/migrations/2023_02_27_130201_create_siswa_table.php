@@ -23,6 +23,8 @@ class CreateSiswaTable extends Migration
             $table->string('tempat_lahir')->nullable();
             $table->date('tanggal_lahir')->nullable();
             $table->string('agama')->nullable();
+            $table->string('jenis_kelamin')->nullable();
+            $table->string('alamat')->nullable();
             $table->string('no_hp')->nullable();
             $table->string('nama_wali')->nullable();
             $table->string('no_hp_wali')->nullable();
