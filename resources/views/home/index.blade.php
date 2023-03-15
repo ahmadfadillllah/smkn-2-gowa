@@ -88,7 +88,7 @@
                 <div class="course-item-text">
                     <div class="course-meta">
                         <span class="course-category bold-font"><a href="#">Kategori</a></span>
-                        <span class="course-author bold-font"><a href="#">{{ $b->kategori->nama }}</a></span>
+                        <span class="course-author bold-font"><a href="{{ route('home.kategori', $b->kategori->id) }}">{{ $b->kategori->nama }}</a></span>
                         <div class="course-rate ul-li">
                             <ul>
                                 <li><i class="fas fa-star"></i></li>
@@ -183,7 +183,7 @@
                             <i class="text-gradiant flaticon-technology"></i>
                         </div>
                         <div class="category-title">
-                            <h4>{{ $k->nama }}</h4>
+                            <a href="{{ route('home.kategori', $k->id) }}"><h4>{{ $k->nama }}</h4></a>
                         </div>
                     </div>
                 </div>

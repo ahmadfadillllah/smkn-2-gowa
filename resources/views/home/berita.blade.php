@@ -44,8 +44,9 @@
 					<div class="col-md-3">
 						<div class="side-bar">
 							<div class="side-bar-search">
-								<form action="#" method="get">
-									<input type="text" class="" placeholder="Search">
+								<form action="{{ route('home.cari_berita') }}" method="post">
+                                    @csrf
+									<input type="text" class="" name="nama" placeholder="Cari Berita">
 									<button type="submit"><i class="fas fa-search"></i></button>
 								</form>
 							</div>
@@ -55,7 +56,7 @@
 								<div class="post-categori ul-li-block">
 									<ul>
 										@foreach ($kategori as $k)
-                                        <li class="cat-item"><a href="#">{{ $k->nama }}</a></li>
+                                        <li class="cat-item"><a href="{{ route('home.kategori', $k->id) }}">{{ $k->nama }}</a></li>
                                         @endforeach
 
 									</ul>

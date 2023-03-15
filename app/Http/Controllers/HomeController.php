@@ -55,4 +55,17 @@ class HomeController extends Controller
         $kategori = KategoriBerita::all();
         return view('home.berita', compact('berita', 'kategori'));
     }
+
+    public function kategori($id)
+    {
+        $berita = Berita::with('kategori')->get();
+
+        return view('home.kategori', compact('berita'));
+    }
+
+    public function cari_berita(Request $request)
+    {
+        $berita = Berita::where('judul',$request->nama)->orWhere('isi','like',"%{$request->nama}%")->get();
+        return view('home.cari_berita', compact('berita'));
+    }
 }

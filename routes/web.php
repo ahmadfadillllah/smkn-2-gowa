@@ -39,6 +39,8 @@ Route::get('/contact_us',[HomeController::class, 'contact'])->name('home.contact
 Route::post('/contact_us/send',[HomeController::class, 'contact_send'])->name('home.contact_send');
 
 Route::get('/berita_kegiatan/{slug}',[HomeController::class, 'berita'])->name('home.berita');
+Route::get('/kategori_berita/{id}',[HomeController::class, 'kategori'])->name('home.kategori');
+Route::post('/cari_berita',[HomeController::class, 'cari_berita'])->name('home.cari_berita');
 
 Route::post('/login_post',[AuthController::class, 'login_post'])->name('login.post');
 Route::get('/login',[AuthController::class, 'login'])->name('login');

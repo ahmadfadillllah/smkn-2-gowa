@@ -55,7 +55,7 @@
                     <h4 class="title">Kategori </h4>
                     <ul class="navbar-nav" id="menu-bar">
                         @foreach ($kategori as $k)
-                            <li><a href="#{{ $k->id }}" class="scroll">{{ $k->nama }}</a></li>
+                            <li><a href="{{ route('home.kategori', $k->id) }}" class="scroll">{{ $k->nama }}</a></li>
                         @endforeach
                     </ul>
                 </div>
