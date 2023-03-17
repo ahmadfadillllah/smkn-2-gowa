@@ -58,7 +58,11 @@ class HomeController extends Controller
 
     public function kategori($id)
     {
-        $berita = Berita::with('kategori')->get();
+        $berita = Berita::with('kategori')->where('kategoriberita_id', $id)->get();
+
+        if($berita->isEmpty()){
+            return redirect()->back()->with('info', 'Berita belum ada di kategori ini');
+        }
 
         return view('home.kategori', compact('berita'));
     }
