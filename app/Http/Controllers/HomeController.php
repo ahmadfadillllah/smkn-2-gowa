@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Berita;
 use App\Models\Guru;
 use App\Models\KategoriBerita;
+use App\Models\Layanan;
 use App\Models\ProfilSekolah;
 use App\Models\Saran;
+use App\Models\Siswa;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -71,5 +73,35 @@ class HomeController extends Controller
     {
         $berita = Berita::where('judul',$request->nama)->orWhere('isi','like',"%{$request->nama}%")->get();
         return view('home.cari_berita', compact('berita'));
+    }
+
+    public function layanan()
+    {
+        return view('home.layanan');
+    }
+
+    public function layanan_send(Request $request)
+    {
+        $cari_nisn = Siswa::where('nisn','like',"%{$request->nisn}%")->get();
+        if($cari_nisn->isEmpty()){
+            return redirect()->back()->with('info', 'Maaf, Siswa tidak ditemukan');
+        }else{
+            try {
+                Layanan::create([
+                    'nisn' => $request->nisn,
+                    'no_hp' => $request->no_hp,
+                    'email' => $request->email,
+                    'surat' => $request->surat,
+                    'tanggal_surat' => $request->tanggal_surat,
+                    'pesan' => $request->pesan,
+                    'status' => 'Proses'
+                ]);
+
+                return redirect()->back()->with('success', 'Request surat telah terkirim');
+            } catch (\Throwable $th) {
+                return redirect()->back()->with('info', $th->getMessage());
+            }
+        }
+        return view('home.layanan');
     }
 }

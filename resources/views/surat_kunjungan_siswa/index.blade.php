@@ -11,10 +11,10 @@
                     <div class="card-header">
                         <h4 class="card-title">Daftar Surat</h4>
                         <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal"
-                        data-bs-target="#insertSuketSiswaAktif">Tambah</button>
+                        data-bs-target="#insertKunjunganSiswa">Tambah</button>
                     </div>
                     <!-- Modal Harus Disini -->
-                    @include('suket_siswa_aktif.modal.insert')
+                    @include('surat_kunjungan_siswa.modal.insert')
                     <div class="card-body">
                         <div class="table-responsive">
                             <table id="example3" class="display" style="min-width: 845px">
@@ -24,24 +24,24 @@
                                         <th>Nomor Surat</th>
                                         <th>Pembuat</th>
                                         <th>Nama Siswa</th>
-                                        <th>URL Surat</th>
+                                        <th>URL SUrat</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($suket as $s)
+                                    @foreach ($kunjungan as $s)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $s->nomorsurat->id_surat }}/{{ $s->nomorsurat->nomor_surat }}</td>
                                         <td>{{ $s->user->name }}</td>
-                                        <td>{{ route('suket_siswa_aktif.download', $s->id) }}</td>
                                         <td>{{ $s->siswa->nama_siswa }}</td>
+                                        <td>{{ route('surat_kunjungan_siswa.download', $s->id) }}</td>
                                         <td>
                                             <div class="d-flex">
-                                                <a href="{{ route('suket_siswa_aktif.download', $s->id) }}" class="btn btn-primary shadow btn-xs sharp me-1"target="_blank"><i class="fas fa-envelope"></i></a>
+                                                <a href="{{ route('surat_kunjungan_siswa.download', $s->id) }}" class="btn btn-primary shadow btn-xs sharp me-1"target="_blank"><i class="fas fa-envelope"></i></a>
                                                 <a href="#" class="btn btn-danger shadow btn-xs sharp" data-bs-toggle="modal"
-                                                data-bs-target="#destroySuketSiswaAktif{{ $s->id }}"><i class="fa fa-trash"></i></a>
-                                                @include('suket_siswa_aktif.modal.destroy')
+                                                data-bs-target="#destroyKunjunganSiswa{{ $s->id }}"><i class="fa fa-trash"></i></a>
+                                                @include('surat_kunjungan_siswa.modal.destroy')
                                             </div>
                                         </td>
                                     </tr>

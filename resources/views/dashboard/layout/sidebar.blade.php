@@ -38,6 +38,12 @@
                     <span class="nav-text">Berita/Kegiatan</span>
                 </a>
             </li>
+            <li>
+                <a href="{{ route('layanan.index') }}" aria-expanded="false">
+                    <i class="material-icons">article</i>
+                    <span class="nav-text">Request Surat</span>
+                </a>
+            </li>
             <li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
                 <i class="material-icons"> table_chart </i>
                 <span class="nav-text">Master Data</span>
@@ -70,10 +76,10 @@
                     <li><a class="has-arrow" href="javascript:void(0);" aria-expanded="false">Surat Keluar</a>
                         <ul aria-expanded="false">
                             <li><a href="{{ route('suket_siswa_aktif.index') }}">Surat Keterangan Siswa Aktif</a></li>
-                            <li><a href="javascript:void(0);">Surat Izin Kunjungan Siswa</a></li>
-                            <li><a href="javascript:void(0);">Surat Izin Orang Tua Siswa</a></li>
-                            <li><a href="javascript:void(0);">Surat Keterangan Berkelakuan Baik Siswa</a></li>
-                            <li><a href="javascript:void(0);">Surat Keterangan Lulus</a></li>
+                            <li><a href="{{ route('surat_kunjungan_siswa.index') }}">Surat Izin Kunjungan Siswa</a></li>
+                            <li><a href="{{ route('surat_orang_tua.index') }}">Surat Izin Orang Tua Siswa</a></li>
+                            <li><a href="{{ route('surat_berkelakuan_baik.index') }}">Surat Keterangan Berkelakuan Baik Siswa</a></li>
+                            <li><a href="{{ route('surat_keterangan_lulus.index') }}">Surat Keterangan Lulus</a></li>
                         </ul>
                     </li>
                 </ul>

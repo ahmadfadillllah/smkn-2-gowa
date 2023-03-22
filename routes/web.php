@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KategoriBeritaController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\KelolaUserController;
+use App\Http\Controllers\LayananSuratController;
 use App\Http\Controllers\NomorSuratController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProfilSekolahController;
@@ -15,11 +16,19 @@ use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\SaranController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\SuketSiswaAktifController;
+use App\Http\Controllers\SuratBerkelakuanBaikController;
+use App\Http\Controllers\SuratKeteranganLulusController;
+use App\Http\Controllers\SuratKunjunganSiswaController;
 use App\Http\Controllers\SuratMasukController;
+use App\Http\Controllers\SuratOrangTuaController;
 use App\Models\Kelas;
 use App\Models\NomorSurat;
 use App\Models\Siswa;
 use App\Models\SuketSiswaAktif;
+use App\Models\SuratBerkelakuanBaik;
+use App\Models\SuratKeteranganLulus;
+use App\Models\SuratKunjunganSiswa;
+use App\Models\SuratOrangTua;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,6 +46,9 @@ Route::get('/',[HomeController::class, 'index'])->name('home.index');
 Route::get('/about',[HomeController::class, 'about'])->name('home.about');
 Route::get('/contact_us',[HomeController::class, 'contact'])->name('home.contact');
 Route::post('/contact_us/send',[HomeController::class, 'contact_send'])->name('home.contact_send');
+
+Route::get('/layanan_surat',[HomeController::class, 'layanan'])->name('home.layanan');
+Route::post('/layanan_surat/send',[HomeController::class, 'layanan_send'])->name('home.layanan_send');
 
 Route::get('/berita_kegiatan/{slug}',[HomeController::class, 'berita'])->name('home.berita');
 Route::get('/kategori_berita/{id}',[HomeController::class, 'kategori'])->name('home.kategori');
@@ -76,6 +88,10 @@ Route::group(['middleware' => ['auth', 'checkRole:admin,guru']], function(){
     Route::get('/berita/edit/{id}',[BeritaController::class, 'edit'])->name('berita.edit');
     Route::post('/berita/update/{id}',[BeritaController::class, 'update'])->name('berita.update');
     Route::get('/berita/destroy/{id}',[BeritaController::class, 'destroy'])->name('berita.destroy');
+
+    Route::get('/layanan_surat',[LayananSuratController::class, 'index'])->name('layanan.index');
+    Route::post('/layanan_surat/update/{id}',[LayananSuratController::class, 'update'])->name('layanan.update');
+    Route::get('/layanan_surat/send/{id}',[LayananSuratController::class, 'send'])->name('layanan.send');
 
     Route::get('/saran_masukan',[SaranController::class, 'index'])->name('saran.index');
     Route::get('/saran_masukan/destroy/{id}',[SaranController::class, 'destroy'])->name('saran.destroy');
@@ -136,6 +152,118 @@ Route::group(['middleware' => ['auth', 'checkRole:admin,guru']], function(){
 
 		return WordTemplate::export($file, $array, $nama_file);
 	})->name('suket_siswa_aktif.download');
+
+    Route::get('/surat_kunjungan_siswa',[SuratKunjunganSiswaController::class, 'index'])->name('surat_kunjungan_siswa.index');
+    Route::post('/surat_kunjungan_siswa/insert',[SuratKunjunganSiswaController::class, 'insert'])->name('surat_kunjungan_siswa.insert');
+    Route::get('/surat_kunjungan_siswa/destroy/{id}',[SuratKunjunganSiswaController::class, 'destroy'])->name('surat_kunjungan_siswa.destroy');
+    Route::get('/surat_kunjungan_siswa/download/{id}', function ($id) {
+        $kunjungan = SuratKunjunganSiswa::where('id', $id)->first();
+
+		$nomorsurat = NomorSurat::where('id', $kunjungan->nomorsurat_id)->first();
+        $siswa = Siswa::where('id', $kunjungan->siswa_id)->first();
+        $kelas = Kelas::where('id', $siswa->kelas_id)->first();
+
+        $file = public_path('surat_kunjungan_siswa.rtf');
+
+		$array = array(
+            '[NOMOR_SURAT]' => $nomorsurat->id_surat . '/' . $nomorsurat->nomor_surat,
+            '[IZIN_KE]' => $kunjungan->izin_ke,
+            '[NAMA_SISWA]' => $siswa->nama_siswa,
+            '[TAHAP]' => $kunjungan->tahap,
+            '[TANGGAL]' => date("d F Y", strtotime($kunjungan->tanggal)),
+		);
+
+		$nama_file = 'Surat_Kunjungan_Siswa_'.$siswa->nama_lengkap.'.doc';
+
+		return WordTemplate::export($file, $array, $nama_file);
+	})->name('surat_kunjungan_siswa.download');
+
+    Route::get('/surat_orang_tua',[SuratOrangTuaController::class, 'index'])->name('surat_orang_tua.index');
+    Route::post('/surat_orang_tua/insert',[SuratOrangTuaController::class, 'insert'])->name('surat_orang_tua.insert');
+    Route::get('/surat_orang_tua/destroy/{id}',[SuratOrangTuaController::class, 'destroy'])->name('surat_orang_tua.destroy');
+    Route::get('/surat_orang_tua/download/{id}', function ($id) {
+        $orangtua = SuratOrangTua::where('id', $id)->first();
+
+		$nomorsurat = NomorSurat::where('id', $orangtua->nomorsurat_id)->first();
+        $siswa = Siswa::where('id', $orangtua->siswa_id)->first();
+        $kelas = Kelas::where('id', $siswa->kelas_id)->first();
+
+        $file = public_path('surat_orang_tua.rtf');
+
+		$array = array(
+            '[NOMOR_SURAT]' => $nomorsurat->id_surat . '/' . $nomorsurat->nomor_surat,
+            '[NAMA_WALI]' => $siswa->nama_wali,
+            '[KEGIATAN]' => $orangtua->kegiatan,
+            '[TGLGIAT]' => date("d F Y", strtotime($orangtua->tanggal)),
+            '[TEMPAT]' => $orangtua->tempat,
+            '[NAMA_SISWA]' => $siswa->nama_siswa,
+            '[KELAS]' => $kelas->tingkat . ' ' . $kelas->nama,
+            '[KETERANGAN]' => $orangtua->keterangan,
+            '[TANGGAL]' => date("d F Y", strtotime($orangtua->tanggal)),
+		);
+
+		$nama_file = 'Surat_Orang_Tua_Siswa_'.$siswa->nama_lengkap.'.doc';
+
+		return WordTemplate::export($file, $array, $nama_file);
+	})->name('surat_orang_tua.download');
+
+    Route::get('/surat_berkelakuan_baik',[SuratBerkelakuanBaikController::class, 'index'])->name('surat_berkelakuan_baik.index');
+    Route::post('/surat_berkelakuan_baik/insert',[SuratBerkelakuanBaikController::class, 'insert'])->name('surat_berkelakuan_baik.insert');
+    Route::get('/surat_berkelakuan_baik/destroy/{id}',[SuratBerkelakuanBaikController::class, 'destroy'])->name('surat_berkelakuan_baik.destroy');
+    Route::get('/surat_berkelakuan_baik/download/{id}', function ($id) {
+        $baik = SuratBerkelakuanBaik::where('id', $id)->first();
+
+		$nomorsurat = NomorSurat::where('id', $baik->nomorsurat_id)->first();
+        $siswa = Siswa::where('id', $baik->siswa_id)->first();
+        $kelas = Kelas::where('id', $siswa->kelas_id)->first();
+
+        $file = public_path('surat_berkelakuan_baik.rtf');
+
+		$array = array(
+            '[NOMOR_SURAT]' => $nomorsurat->id_surat . '/' . $nomorsurat->nomor_surat,
+            '[NAMA_SISWA]' => $siswa->nama_siswa,
+            '[TTL]' => $siswa->tempat_lahir. ', ' .date("d F Y", strtotime($siswa->tanggal_lahir)),
+            '[NISN]' => $siswa->nisn,
+            '[NAMA_WALI]' => $siswa->nama_wali,
+            '[TANGGAL]' => date("d F Y", strtotime($baik->tanggal)),
+		);
+
+		$nama_file = 'Surat_Berkelakuan_Baik_Siswa_'.$siswa->nama_lengkap.'.doc';
+
+		return WordTemplate::export($file, $array, $nama_file);
+	})->name('surat_berkelakuan_baik.download');
+
+    Route::get('/surat_keterangan_lulus',[SuratKeteranganLulusController::class, 'index'])->name('surat_keterangan_lulus.index');
+    Route::post('/surat_keterangan_lulus/insert',[SuratKeteranganLulusController::class, 'insert'])->name('surat_keterangan_lulus.insert');
+    Route::get('/surat_keterangan_lulus/destroy/{id}',[SuratKeteranganLulusController::class, 'destroy'])->name('surat_keterangan_lulus.destroy');
+    Route::get('/surat_keterangan_lulus/download/{id}', function ($id) {
+        $lulus = SuratKeteranganLulus::where('id', $id)->first();
+
+		$nomorsurat = NomorSurat::where('id', $lulus->nomorsurat_id)->first();
+        $siswa = Siswa::where('id', $lulus->siswa_id)->first();
+        $kelas = Kelas::where('id', $siswa->kelas_id)->first();
+
+        $file = public_path('surat_keterangan_lulus.rtf');
+
+		$array = array(
+            '[NOMOR_SURAT]' => $nomorsurat->id_surat . '/' . $nomorsurat->nomor_surat,
+            '[NAMA_SISWA]' => $siswa->nama_siswa,
+            '[NIS]' => $siswa->nis,
+            '[NISN]' => $siswa->nisn,
+            '[TTL]' => $siswa->tempat_lahir. ', ' .date("d F Y", strtotime($siswa->tanggal_lahir)),
+            '[ALAMAT]' => $siswa->alamat,
+            '[KELAS]' => $kelas->tingkat . ' ' . $kelas->nama,
+            '[TAHUN_PELAJARAN]' => $lulus->tahun_pelajaran,
+            '[TAHUN_US]' => $lulus->tahun_us,
+            '[DARI_TANGGAL]' => date("d-m-Y", strtotime($lulus->dari_tanggal)),
+            '[SAMPAI_TANGGAL]' => date("d-m-Y", strtotime($lulus->sampai_tanggal)),
+            '[TANGGAL]' => date("d F Y", strtotime($lulus->tanggal)),
+		);
+
+		$nama_file = 'Surat_Keterangan_Lulus_Siswa_'.$siswa->nama_lengkap.'.doc';
+
+		return WordTemplate::export($file, $array, $nama_file);
+	})->name('surat_keterangan_lulus.download');
 
     Route::get('/profile',[ProfileController::class, 'index'])->name('profile.index');
     Route::post('/profile/change_avatar',[ProfileController::class, 'change_avatar'])->name('profile.change_avatar');

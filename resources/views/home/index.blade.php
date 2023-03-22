@@ -17,7 +17,7 @@
                 <div class="layer-1-4">
                     <div id="course-btn">
                         <div class="genius-btn  text-center text-uppercase ul-li-block bold-font">
-                            <a href="#">Layanan Surat</a>
+                            <a href="{{ route('home.layanan') }}">Layanan Surat</a>
                         </div>
                     </div>
                 </div>
