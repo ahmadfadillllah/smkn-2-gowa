@@ -47,8 +47,8 @@ Route::get('/about',[HomeController::class, 'about'])->name('home.about');
 Route::get('/contact_us',[HomeController::class, 'contact'])->name('home.contact');
 Route::post('/contact_us/send',[HomeController::class, 'contact_send'])->name('home.contact_send');
 
-Route::get('/layanan_surat',[HomeController::class, 'layanan'])->name('home.layanan');
-Route::post('/layanan_surat/send',[HomeController::class, 'layanan_send'])->name('home.layanan_send');
+Route::get('/layanan_surat_req',[HomeController::class, 'layanan'])->name('home.layanan');
+Route::post('/layanan_surat_req/send',[HomeController::class, 'layanan_send'])->name('home.layanan_send');
 
 Route::get('/berita_kegiatan/{slug}',[HomeController::class, 'berita'])->name('home.berita');
 Route::get('/kategori_berita/{id}',[HomeController::class, 'kategori'])->name('home.kategori');
