@@ -34,8 +34,8 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $s->nomorsurat->id_surat }}/{{ $s->nomorsurat->nomor_surat }}</td>
                                         <td>{{ $s->user->name }}</td>
-                                        <td>{{ route('suket_siswa_aktif.download', $s->id) }}</td>
                                         <td>{{ $s->siswa->nama_siswa }}</td>
+                                        <td>{{ route('suket_siswa_aktif.download', $s->id) }}</td>
                                         <td>
                                             <div class="d-flex">
                                                 <a href="{{ route('suket_siswa_aktif.download', $s->id) }}" class="btn btn-primary shadow btn-xs sharp me-1"target="_blank"><i class="fas fa-envelope"></i></a>
