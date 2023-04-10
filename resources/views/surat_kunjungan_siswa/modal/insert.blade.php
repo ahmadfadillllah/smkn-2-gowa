@@ -29,7 +29,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="">Izin Ke</label>
-                    <input type="number" class="form-control input-rounded" name="izin_ke" required>
+                    <input type="text" class="form-control input-rounded" name="izin_ke" required>
                 </div>
                 <div class="mb-3">
                     <label for="">Tahap</label>

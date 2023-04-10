@@ -20,7 +20,7 @@ class DashboardController extends Controller
 
     public function search(Request $request)
     {
-        $search = Siswa::where('nama_siswa','like',"%".$request->cari_siswa."%")->get();
+        $search = Siswa::where('nama_siswa','like',"%".$request->cari_siswa."%")->orWhere('nisn','like',"%".$request->cari_siswa."%")->get();
         $kelas = Kelas::all();
         return view('cari_siswa.index', compact('search', 'kelas'));
     }

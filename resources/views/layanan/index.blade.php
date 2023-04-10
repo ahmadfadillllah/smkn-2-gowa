@@ -19,6 +19,7 @@
                                     <tr>
                                         <th>#</th>
                                         <th>NISN</th>
+                                        <th>No. HP</th>
                                         <th>Request</th>
                                         <th>Status</th>
                                         <th>URL Surat</th>
@@ -32,6 +33,7 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $k->nisn }}</td>
+                                        <td>{{ $k->no_hp }}</td>
                                         <td>{{ $k->surat }}</td>
                                         <td>{{ $k->status }}</td>
                                         <td>{{ $k->keterangan }}</td>
