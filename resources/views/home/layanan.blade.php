@@ -73,6 +73,9 @@
 								<span class="subtitle ml42 text-uppercase">Layanan Surat</span>
 								<h2>Dapatkan Layanan Surat <span>dengan cepat</span></h2>
 							</div>
+                            <div class="section-title relative-position mb20 headline text-left "  >
+								<img src="{{ asset('home/jthemes.net/themes/html/genius-course/assets/img/alur.png') }}" width="500" style="text-align: center">
+							</div>
 							<div class="about-content-text">
 								<div class="about-btn "  >
 									<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
