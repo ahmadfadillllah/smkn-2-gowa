@@ -20,6 +20,14 @@ class SiswaController extends Controller
 
     public function insert(Request $request)
     {
+        $request->validate([
+            'nis' => 'required|integer',
+            'nisn' => 'required|integer',
+        ],[
+            'nis.integer' => 'NIS harus berupa angka',
+            'nisn.integer' => 'NISN harus berupa angka',
+        ]);
+
         try {
             Siswa::create([
                 'kelas_id' => $request->kelas_id,
