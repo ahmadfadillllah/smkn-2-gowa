@@ -13,7 +13,7 @@ class SuketSiswaAktifController extends Controller
     //
     public function index()
     {
-        if(Auth::user()->role == 'admin'){
+        if(Auth::user()->role == 'admin' and Auth::user()->role == 'guru'){
 
             $suket = SuketSiswaAktif::with('user', 'nomorsurat', 'siswa')->get();
         }else{

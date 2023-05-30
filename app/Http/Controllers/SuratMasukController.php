@@ -12,7 +12,7 @@ class SuratMasukController extends Controller
     //
     public function index()
     {
-        if(Auth::user()->role == 'admin'){
+        if(Auth::user()->role == 'admin' and Auth::user()->role == 'guru'){
             $surat_masuk = SuratMasuk::with('user', 'nomorsurat')->get();
         }else{
             $surat_masuk = SuratMasuk::with('user', 'nomorsurat')->where('penerima', Auth::user()->id)->get();
