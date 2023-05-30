@@ -23,7 +23,7 @@
                                         <th>Request</th>
                                         <th>Status</th>
                                         <th>URL Surat</th>
-                                        @if (Auth::user()->role == 'admin')
+                                        @if (Auth::user()->role == 'admin' or Auth::user()->role == 'guru')
                                         <th>Aksi</th>
                                         @endif
                                     </tr>
