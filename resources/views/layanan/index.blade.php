@@ -37,7 +37,7 @@
                                         <td>{{ $k->surat }}</td>
                                         <td>{{ $k->status }}</td>
                                         <td>{{ $k->keterangan }}</td>
-                                        @if (Auth::user()->role == 'admin' and Auth::user()->role == 'guru')
+                                        @if (Auth::user()->role == 'admin' or Auth::user()->role == 'guru')
                                         <td>
                                             <div class="d-flex">
                                                 <a href="#" class="btn btn-primary shadow btn-xs sharp me-1" data-bs-toggle="modal"

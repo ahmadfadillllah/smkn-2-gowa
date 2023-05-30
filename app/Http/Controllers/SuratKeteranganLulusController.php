@@ -12,7 +12,7 @@ class SuratKeteranganLulusController extends Controller
 {
     public function index()
     {
-        if(Auth::user()->role == 'admin' and Auth::user()->role == 'guru'){
+        if(Auth::user()->role == 'admin' or Auth::user()->role == 'guru'){
 
             $lulus = SuratKeteranganLulus::with('user', 'nomorsurat', 'siswa')->get();
         }else{

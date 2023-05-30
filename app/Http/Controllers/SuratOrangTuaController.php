@@ -12,7 +12,7 @@ class SuratOrangTuaController extends Controller
 {
     public function index()
     {
-        if(Auth::user()->role == 'admin' and Auth::user()->role == 'guru'){
+        if(Auth::user()->role == 'admin' or Auth::user()->role == 'guru'){
 
             $orangtua = SuratOrangTua::with('user', 'nomorsurat', 'siswa')->get();
         }else{
