@@ -32,7 +32,7 @@
                                         <th>Pembuat</th>
                                         <th>Tanggal Register</th>
                                         <th>Perihal</th>
-                                        @if (Auth::user()->role == 'admin')
+                                        @if (Auth::user()->role == 'admin' or Auth::user()->role == 'guru')
                                         <th>Aksi</th>
                                         @endif
                                     </tr>
@@ -45,7 +45,7 @@
                                         <td>{{ $n->user->name }}</td>
                                         <td>{{ $n->created_at }}</td>
                                         <td>{{ $n->perihal }}</td>
-                                        @if (Auth::user()->role == 'admin')
+                                        @if (Auth::user()->role == 'admin' or Auth::user()->role == 'guru')
                                         <td>
                                             <div class="d-flex">
                                                 <a href="#" class="btn btn-primary shadow btn-xs sharp me-1" data-bs-toggle="modal"
